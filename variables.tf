@@ -37,11 +37,22 @@ variable "environment" {
 variable "student_name" {
   description = "Application Name"
   type        = string
-  default     = "cford38"
+  default     = "mmorova2"
 }
 
 variable "class_name" {
   description = "Application Name"
   type        = string
   default     = "dsba6190"
+}
+
+variable "sql_admin_username" {
+  description = "Administrator username for Azure SQL Server"
+  type        = string
+}
+
+variable "sql_admin_password" {
+  description = "Administrator password for Azure SQL Server"
+  type        = string
+  sensitive   = true
 }
