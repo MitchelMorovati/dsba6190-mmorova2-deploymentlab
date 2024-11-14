@@ -45,7 +45,7 @@ resource "azurerm_storage_account" "storage" {
   location                 = azurerm_resource_group.rg.location
   account_tier             = "Standard"
   account_replication_type = "LRS"
-  is_hns_enabled           = true  # Enable hierarchical namespace for Data Lake
+  is_hns_enabled           = true # Enable hierarchical namespace for Data Lake
 
   network_rules {
     virtual_network_subnet_ids = [azurerm_subnet.subnet.id]
@@ -70,7 +70,7 @@ resource "azurerm_mssql_server" "sql_server" {
 resource "azurerm_mssql_database" "sql_database" {
   name      = "db-${var.class_name}-${var.student_name}-${var.environment}-${random_integer.deployment_id_suffix.result}"
   server_id = azurerm_mssql_server.sql_server.id
-  sku_name  = "Basic"   # Basic SKU as required
+  sku_name  = "Basic" # Basic SKU as required
 
   tags = local.tags
 }
